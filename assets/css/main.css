@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -161,6 +159,10 @@ header .navbar  .navbar-list li:hover a {
     padding-left: 250px;
     line-height: 20px;
     color: #118877;
+    animation: go-up 1s ease-in-out forwards;
+}
+
+.anim-goup{
     animation: go-up 1s ease-in-out forwards;
 }
 
