@@ -257,6 +257,7 @@ header .navbar  .navbar-list li:hover a {
     color: #118877;
     padding: 25px;
     border-radius: 10px;
+    width: 500px;
 }
 
 .articel-block h2 {

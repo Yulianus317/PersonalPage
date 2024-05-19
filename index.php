@@ -7,6 +7,9 @@
     crossorigin="anonymous" 
     referrerpolicy="no-referrer" 
     />
+
+    <?php require_once 'connect.php'; ?>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yulianus Profile</title>
@@ -55,28 +58,20 @@
 
         <section id="blog" class="blog-page">
             <h1>Blog</h1> 
-            <div class="articlestyle">  
+            <div class="articlestyle">
+                <?php
+                while($article = $result->fetch_assoc()){
+                ?>  
                 <div class="articel-block">
             <article>
-                <h2>Kucing dengan Parasut: Kisah Unik Penyebaran Kucing di Kalimantan Tahun 1960</h2>
-                <p>Pada tahun 1960, sebuah kejadian unik terjadi di wilayah Kalimantan yang menghebohkan banyak orang. Ribuan kucing dijatuhkan menggunakan parasut di berbagai daerah di Kalimantan.</p>
-                <a href="https://www.kompasiana.com/alridramadhan6213/65e02ac0c57afb0a002f12b3/kucing-dengan-parasut-kisah-unik-penyebaran-kucing-di-kalimantan-tahun-1960">Baca Selengkapnya</a>
+                <h2><?php echo $article['Title']; ?></h2>
+                <p><?php echo $article['Desc']; ?></p>
+                <a href="<?php echo $article['Link']; ?>">Read More...</a>
             </article>
                 </div>
-                <div class="articel-block">
-            <article>
-                <h2>Perbedaan UX Designer, UX Researcher, dan UX Writer</h2>
-                <p>UX sendiri, terdapat beberapa role di dalamnya dengan tugas yang berbeda-beda. Beberapa pembagian tugas UX di antaranya adalah designer, researcher, dan juga writer. Lantas apa perbedaan UX Designer, UX Researcher, UX Writer itu sendiri?</p>
-                <a href="https://www.binaracademy.com/blog/perbedaan-ux-designer-ux-researcher-dan-ux-writer">Baca Selengkapnya</a>
-            </article>
-                </div>
-                <div class="articel-block">
-            <article>
-                <h2>UX Writer, Profesi Menjanjikan di Era Digital</h2>
-                <p>UX Writer merupakan profesi di bidang ke penulisan yang mungkin masih terdengar asing di telinga masyarakat pada umumnya. Namun, di era digital saat ini UX Writer merupakan profesi yang sangat dibutuhkan dan cukup banyak peminatnya</p>
-                <a href="https://www.kompasiana.com/veranikaanjani/65a22ac8c57afb582b11bc92/ux-writer-profesi-menjanjikan-di-era-digital">Baca Selengkapnya</a>
-            </article>
-                </div>
+                <?php
+                }
+                ?>  
             </div>
          </section>
 
